@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="input-group flex-nowrap">
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping"><i class="fas fa-search"></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-8 text-right text-secondary text-opacity-75">
+        <span> {{ connectedUser.nom }} </span>
+      </div>
+
+      <div class="col-md-1">
+        <a href="javascript:void(0);" [routerLink]="['/profil']">
+          <img src="favicon.ico" class="rounded-circle" />
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a [routerLink]="['/login']" class="btn btn-link text-decoration-none"  *ngIf="!connectedUser">
+          <i class="fas fa-sign-in-alt"></i>&nbsp;
+          Login</a>
+        <a [routerLink]="['/login']" class="btn btn-link text-decoration-none text-secondary text-opacity-75" *ngIf="connectedUser"  (click)="handleLogout()">
+          <i class="fas fa-sign-out-alt"></i>&nbsp;
+          Logout</a>
+      </div>
+<!--      <div class="col-md-3"  *ngIf="connectedUser">-->
+<!--        <a [routerLink]="['/login']" class="btn btn-link"  (click)="handleLogout()">-->
+<!--          <i class="fas fa-sign-out-alt"></i>&nbsp;-->
+<!--          Logout</a>-->
+<!--      </div>-->
+    </div>
+  </div>
+</div>
